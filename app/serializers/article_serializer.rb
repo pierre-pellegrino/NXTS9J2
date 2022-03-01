@@ -1,5 +1,5 @@
 class ArticleSerializer < ActiveModel::Serializer
-  includes Rails.application.routes.url_helpers
+  include Rails.application.routes.url_helpers
   attributes :id, :title, :content, :featured_image
 
   def featured_image
