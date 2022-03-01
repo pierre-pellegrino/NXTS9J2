@@ -4,11 +4,13 @@
 GET
 localhost:3000/articles
 
+<hr>
 
 ### Créer un compte
 POST
 localhost:3000/users/sign_up
 
+<hr>
 
 ### Se connecter
 POST
@@ -22,6 +24,7 @@ Body:
     }
 }</code>
 
+<hr>
 
 ### Se déconnecter
 DELETE
@@ -29,6 +32,7 @@ localhost:3000/users/sign_out
 
 **Token requis**
 
+<hr>
 
 ### Créer un article
 POST
@@ -45,6 +49,7 @@ Body:
     }
 </code>
 
+<hr>
 
 ### Créer un article
 PUT
@@ -61,6 +66,7 @@ Body:
     }
 </code>
 
+<hr>
 
 ### Supprimer un article
 DELETE
@@ -68,6 +74,7 @@ localhost:3000/articles/:id
 
 **Token requis**
 
+<hr>
 
 ### Accéder à la liste des commentaires d'un article
 GET
@@ -75,6 +82,7 @@ localhost:3000/articles/:id/comments
 
 **Token requis**
 
+<hr>
 
 ### Ajouter un commentaire
 POST
@@ -89,6 +97,7 @@ Body:
 
 **Token requis**
 
+<hr>
 
 ### Éditer un commentaire
 PUT
@@ -103,6 +112,7 @@ Body:
 
 **Token requis**
 
+<hr>
 
 ### Supprimer un commentaire
 DELETE
