@@ -4,7 +4,17 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    @articles = Article.all
+    # Originally index would show every single article
+          # @articles = Article.all
+
+    # Instead we want to show only the public ones, and private ones can only be seen by their owner.
+    if user_signed_in?
+      @articles = Article.where("private = false OR (private = true AND user_id = #{current_user.id})")
+      Article.where("private = true").each {|a| puts a.user_id}
+    else
+      @articles = Article.where("private = false")
+    end
+    
 
     render json: @articles
   end
@@ -52,7 +62,7 @@ class ArticlesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def article_params
-      params.require(:article).permit(:title, :content)
+      params.require(:article).permit(:title, :content, :private)
     end
 
     def has_same_user
