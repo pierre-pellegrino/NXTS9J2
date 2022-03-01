@@ -10,11 +10,10 @@ class ArticlesController < ApplicationController
     # Instead we want to show only the public ones, and private ones can only be seen by their owner.
     if user_signed_in?
       @articles = Article.where("private = false OR (private = true AND user_id = #{current_user.id})")
-      Article.where("private = true").each {|a| puts a.user_id}
+      # Article.where("private = true").each {|a| puts a.user_id}
     else
       @articles = Article.where("private = false")
-    end
-    
+    end    
 
     render json: @articles
   end
