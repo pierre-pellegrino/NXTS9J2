@@ -8,6 +8,7 @@ gem 'rack-cors'
 gem 'devise'
 gem 'devise-jwt', "~> 0.9.0"
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'active_model_serializers'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.2", ">= 7.0.2.2"
